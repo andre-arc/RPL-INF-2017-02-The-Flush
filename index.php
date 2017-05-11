@@ -30,7 +30,7 @@ if(!isset($_SESSION['username'])){
 
         	
         <!-- Theme Styles -->
-        <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/alpha.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
         
         
@@ -57,10 +57,7 @@ if(!isset($_SESSION['username'])){
                             <span class="chapter-title">The FLush</span>
                         </div>
                         <form class="left search col s6 hide-on-small-and-down">
-                            <div class="input-field">
-                                <input id="search" type="search" placeholder="Search" autocomplete="off">
-                                <label for="search"><i class="material-icons search-icon">search</i></label>
-                            </div>
+                            
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
                         <ul class="right col s9 m3 nav-right-menu">
@@ -306,25 +303,28 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div class="sidebar-account-settings">
                         <ul>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Setting</a>
-                            </li>
+                            
                             <li class="no-padding">
                                 <a href="<?= BASE_URL.'logout.php'?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Log Out</a>
                             </li>
                         </ul>
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
                     <li class="no-padding">
-                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Apps<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="mailbox.html">Mailbox</a></li>
-                                <li><a href="search.html">Search</a></li>
-                                <li><a href="todo.html">Todo</a></li>
+                                <li><a href="mailbox.html">Area 1</a></li>
+                                <li><a href="search.html">Area 2</a></li>
+                                <li><a href="todo.html">Area 3</a></li>
+								<li><a href="mailbox.html">Area 4</a></li>
+								<li><a href="mailbox.html">Area 5</a></li>
                             </ul>
                         </div>
+                    </li>
+					<li class="no-padding">
+                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
                     </li>
                     
                 </ul>
@@ -336,48 +336,8 @@ if(!isset($_SESSION['username'])){
             </aside>
             <main class="mn-inner inner-active-sidebar">
                 <div class="middle-content">
-                    <div class="row no-m-t no-m-b">
-                    <div class="col s12 m12 l4">
-                        <div class="card stats-card">
-                            <div class="card-content">
-                                <div class="card-options">
-                                    <ul>
-                                        <li class="red-text"><span class="badge blue lighten-1">gross</span></li>
-                                    </ul>
-                                </div>
-                                <span class="card-title">Sales</span>
-                                <span class="stats-counter">$<span class="counter">48190</span><small>This week</small></span>
-                            </div>
-                            <div id="sparkline-bar"></div>
-                        </div>
-                    </div>
-                        <div class="col s12 m12 l4">
-                        <div class="card stats-card">
-                            <div class="card-content">
-                                <div class="card-options">
-                                    <ul>
-                                        <li><a href="javascript:void(0)"><i class="material-icons">more_vert</i></a></li>
-                                    </ul>
-                                </div>
-                                <span class="card-title">Page views</span>
-                                <span class="stats-counter"><span class="counter">83710</span><small>This month</small></span>
-                            </div>
-                            <div id="sparkline-line"></div>
-                        </div>
-                    </div>
-                    <div class="col s12 m12 l4">
-                        <div class="card stats-card">
-                            <div class="card-content">
-                                <span class="card-title">Reports</span>
-                                <span class="stats-counter"><span class="counter">23230</span><small>Last week</small></span>
-                                <div class="percent-info green-text">8% <i class="material-icons">trending_up</i></div>
-                            </div>
-                            <div class="progress stats-card-progress">
-                                <div class="determinate" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
+                    
                     <div class="row no-m-t no-m-b">
                         <div class="col s12 m12 l8">
                             <div class="card visitors-card">
@@ -387,139 +347,67 @@ if(!isset($_SESSION['username'])){
                                             <li><a href="javascript:void(0)" class="card-refresh"><i class="material-icons">refresh</i></a></li>
                                         </ul>
                                     </div>
-                                    <span class="card-title">Visitors<span class="secondary-title">Showing stats from the last week</span></span>
-                                            <div id="flotchart1"></div>
+                                    <span class="card-title">Peta Area Pasar Rukoh</span>
+                                            <div id="flotchart1">
+												<img src="peta.png">
+											</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col s12 m12 l4">
                             <div class="card server-card">
-                                <div class="card-content">
-                                <div class="card-options">
-                                    <ul>
-                                        <li class="red-text"><span class="badge blue-grey lighten-3">optimal</span></li>
-                                    </ul>
-                                </div>
-                                    <span class="card-title">Server Load</span>
-                                                <div class="server-load row">
-                                                    <div class="server-stat col s4">
-                                                        <p>167GB</p>
-                                                        <span>Usage</span>
-                                                    </div>
-                                                    <div class="server-stat col s4">
-                                                        <p>320GB</p>
-                                                        <span>Space</span>
-                                                    </div>
-                                                    <div class="server-stat col s4">
-                                                        <p>57.4%</p>
-                                                        <span>CPU</span>
-                                                    </div>
-                                                </div>
-                                    <div class="stats-info">
-                                        <ul>
-                                            <li>Google Chrome<div class="percent-info green-text right">32% <i class="material-icons">trending_up</i></div></li>
-                                            <li>Safari<div class="percent-info red-text right">20% <i class="material-icons">trending_down</i></div></li>
-                                            <li>Mozilla Firefox<div class="percent-info green-text right">18% <i class="material-icons">trending_up</i></div></li>
-                                        </ul>
-                                    </div>
-                                    <div id="flotchart2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row no-m-t no-m-b">
-                        <div class="col s12 m12 l12">
-                            <div class="card invoices-card">
-                                <div class="card-content">
-                                    <div class="card-options">
-                                        <input type="text" class="expand-search" placeholder="Search" autocomplete="off">
-                                    </div>
-                                    <span class="card-title">Invoices</span>
-                                <table class="responsive-table bordered">
-                                    <thead>
-                                        <tr>
-                                            <th data-field="id">ID</th>
-                                            <th data-field="number">Payment Type</th>
-                                            <th data-field="company">Company</th>
-                                            <th data-field="date">Date</th>
-                                            <th data-field="progress">Progress</th>
-                                            <th data-field="total">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>#203</td>
-                                            <td>PayPal</td>
-                                            <td>Curabitur Libero Corp</td>
-                                            <td>Dec 16, 18:12</td>
-                                            <td><span class="pie">3/8</span></td>
-                                            <td>$5430</td>
-                                        </tr>
-                                        <tr>
-                                            <td>#202</td>
-                                            <td>American Express</td>
-                                            <td>Integer Mattis Ltd</td>
-                                            <td>Nov 29, 13:56</td>
-                                            <td><span class="pie">5/8</span></td>
-                                            <td>$1400</td>
-                                        </tr>
-                                        <tr>
-                                            <td>#200</td>
-                                            <td>Discover</td>
-                                            <td>Pellentesque Inc</td>
-                                            <td>Nov 17, 19:14</td>
-                                            <td><span class="pie">3/8</span></td>
-                                            <td>$1250</td>
-                                        </tr>
-                                        <tr>
-                                            <td>#199</td>
-                                            <td>MasterCard</td>
-                                            <td>Curabitur Libero Corp</td>
-                                            <td>Oct 21, 12:16</td>
-                                            <td><span class="pie">5/8</span></td>
-                                            <td>$1349</td>
-                                        </tr>
-                                        <tr>
-                                            <td>#198</td>
-                                            <td>Amex</td>
-                                            <td>Integer Mattis Ltd</td>
-                                            <td>Oct 14, 22:43</td>
-                                            <td><span class="pie">3/8</span></td>
-                                            <td>$980</td>
-                                        </tr>
-                                        <tr>
-                                            <td>#197</td>
-                                            <td>PayPal</td>
-                                            <td>Pellentesque Inc</td>
-                                            <td>Sept 29, 10:33</td>
-                                            <td><span class="pie">5/8</span></td>
-                                            <td>$679</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="card-content"> 
+                                    <span class="card-title">Tingkat Genangan Air</span>
+                                       
+                                    <div class="row">
+									
+										<div id="area">
+											<p>Area 1</p>
+												<div class="progress">
+													<div class="determinate" style="width: 70%"></div>
+												</div>
+										</div>
+										<div id="area">
+											<p>Area 2</p>
+												<div class="progress">
+													<div class="determinate" style="width: 70%"></div>
+												</div>
+										</div>
+										<div id="area">
+											<p>Area 3</p>
+												<div class="progress">
+													<div class="determinate" style="width: 70%"></div>
+												</div>
+										</div>
+										<div id="area">
+											<p>Area 4</p>
+												<div class="progress">
+													<div class="determinate" style="width: 70%"></div>
+												</div>
+										</div>
+										<div id="area">
+											<p>Area 5</p>
+												<div class="progress">
+													<div class="determinate" style="width: 70%"></div>
+												</div>
+										</div>
+										<span class="btn_flush">Flush</span>
+										<span class="btn_flush">Auto Flush
+											<div class="switch">
+												<label>
+													<input type="checkbox" checked="">
+													<span class="lever"></span>
+												</label>
+											</div>
+										</span>
+									</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="inner-sidebar">
-                    <span class="inner-sidebar-title">New Messages</span>
-                    <div class="message-list">
-                    <div class="info-item message-item"><img class="circle" src="assets/images/profile-image-2.png" alt=""><div class="message-info"><div class="message-author">Ned Flanders</div><small>3 hours ago</small></div></div>
-                    <div class="info-item message-item"><img class="circle" src="assets/images/profile-image.png" alt=""><div class="message-info"><div class="message-author">Peter Griffin</div><small>4 hours ago</small></div></div>
-                    <div class="info-item message-item"><img class="circle" src="assets/images/profile-image-1.png" alt=""><div class="message-info"><div class="message-author">Lisa Simpson</div><small>2 days ago</small></div></div>
-                    </div>
-                    <span class="inner-sidebar-title">Events</span>
-                    <span class="info-item">Envato meeting<span class="new badge">12</span></span>
-                    <div class="inner-sidebar-divider"></div>
-                    <span class="info-item">Google I/O</span>
-                    <div class="inner-sidebar-divider"></div>
-                    <span class="info-item disabled">No more events scheduled</span>
-                    <div class="inner-sidebar-divider"></div>
                     
-                    <span class="inner-sidebar-title">Stats <i class="material-icons">trending_up</i></span>
-                    <div class="sidebar-radar-chart"><canvas id="radar-chart" width="170" height="140"></canvas></div>
                 </div>
+                
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
