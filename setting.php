@@ -69,17 +69,17 @@ if(!isset($_SESSION['username'])){
 								  
 								  <div class="time_period">
 								  <p>Pengaturan Periode Waktu</p>
-									  <select onchange="setTimePeriod(this.value)">
-										<option value="15m" />15 Menit</option>
-										<option value="30m" />30 Menit</option>
-										<option value="45m" />45 Menit</option>
-										<option value="1h" />1 Jam</option>
-										<option value="2h" />2 Jam</option>
-										<option value="3h" />3 Jam</option>
+									  <select">
+										<option value="15" />15 Menit</option>
+										<option value="30" />30 Menit</option>
+										<option value="45" />45 Menit</option>
+										<option value="60" />1 Jam</option>
+										<option value="120" />2 Jam</option>
+										<option value="180" />3 Jam</option>
 									  </select>
 								  <p>Area</p>
-									  <select onchange="setAreaPertime(this.value)">
-										<option value="semua" />Semua Area</option>
+									  <select ">
+										<option value="" />Semua Area</option>
 										<option value="area1" />Area 1</option>
 										<option value="area2" />Area 2</option>
 										<option value="area3" />Area 3</option>

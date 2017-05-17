@@ -1646,7 +1646,8 @@ li.active .nav-drop-icon {
     padding-top: 25px;
     padding-right: 25px;
     float: left;
-    width: calc(100% - 220px)!important;
+    width: 100%!important;
+
 }
 
 .mn-inner {
@@ -1804,12 +1805,12 @@ li.active .nav-drop-icon {
 .card-panel > .card-content > .card-title,
 .card > .card-reveal > .card-title {
     line-height: 24px;
-    font-size: 13px;
+    font-size: 28px;
     font-weight: bold;
     display: block;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.54);
+    color: black;
 }
 
 .card .card-image .card-title {
@@ -2555,12 +2556,35 @@ input.expand-search[type=text]:focus:not([readonly]), input.expand-search[type=p
 
 #flotchart1 {
     width: 100%;
-    height: 330px;
+    height: 100%;
+	text-align:center;
+}
+
+#flotchart1 img{
+	height:630px;
 }
 
 #flotchart2 {
     width: 100%;
     height: 120px;
+	
+}
+
+#area{
+	margin:20px;
+}
+
+.btn_flush{
+	text-align:center;
+	font-size:25px;
+    color:white;
+	margin-top:15px;
+	margin-right:15px;
+    background-color:#1F52FF;
+    padding: 5px;
+    border-radius: 7px;
+	cursor: pointer;
+	display: block;
 }
 
 #flotTip {
