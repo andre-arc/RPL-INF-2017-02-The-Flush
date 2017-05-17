@@ -364,34 +364,35 @@ if(!isset($_SESSION['username'])){
 										<div id="area">
 											<p>Area 1</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: 84%" id="progress1"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 2</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: 30%" id="progress2"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 3</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: 50%" id="progress3"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 4</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: 65%" id="progress4"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 5</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate red" style="width: 100%" id="progress5"></div>
 												</div>
 										</div>
-										<span class="btn_flush">Flush</span>
+										<span onclick="Flush()" class="btn_flush">Flush</span>
+										
 										<span class="btn_flush">Auto Flush
 											<div class="switch">
 												<label>
@@ -407,7 +408,17 @@ if(!isset($_SESSION['username'])){
                     </div>
                     
                 </div>
-                
+                <script type="text/javascript">
+					function Flush(){
+						document.getElementById("progress1").style.width="0%";
+						document.getElementById("progress2").style.width="0%";
+						document.getElementById("progress3").style.width="0%";
+						document.getElementById("progress4").style.width="0%";
+						document.getElementById("progress5").style.width="0%";
+			
+					}
+        
+				</script>
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
