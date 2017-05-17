@@ -442,6 +442,16 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
-        
+        <script>
+            if(getPersen('progress1') >= 50){
+                document.getElementById("progress1").style.width="0%";
+            }
+            
+            
+            function getPersen(id){
+                var width = parseInt( 100 * parseFloat($('#'+id).css('width')) / parseFloat($('#'+id).parent().css('width')));
+                return width;
+            }
+        </script>
     </body>
 </html>
