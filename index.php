@@ -324,6 +324,9 @@ if(!isset($_SESSION['username'])){
                         </div>
                     </li>
 					<li class="no-padding">
+                        <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
+                    </li>
+					<li class="no-padding">
                         <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
                     </li>
                     
