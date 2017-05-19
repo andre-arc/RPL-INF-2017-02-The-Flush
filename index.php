@@ -310,7 +310,7 @@ if(!isset($_SESSION['username'])){
                         </ul>
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.php"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
                     <li class="no-padding">
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
@@ -327,7 +327,7 @@ if(!isset($_SESSION['username'])){
                         <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
                     </li>
 					<li class="no-padding">
-                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
+                        <a href="setting.php" class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
                     </li>
                     
                 </ul>
@@ -367,7 +367,7 @@ if(!isset($_SESSION['username'])){
 										<div id="area">
 											<p>Area 1</p>
 												<div class="progress">
-													<div class="determinate" style="width: 84%" id="progress1"></div>
+													<div class="determinate" style="width: 30%" id="progress1"></div>
 												</div>
 										</div>
 										<div id="area">
@@ -425,7 +425,13 @@ if(!isset($_SESSION['username'])){
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
-        
+        <?php
+         $query = "select * from pengaturan";
+        $result = $mysqli->query($query);
+        if($result == true){
+            $data = $result->fetch_assoc();
+        }                        
+        ?>
         
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
@@ -446,7 +452,7 @@ if(!isset($_SESSION['username'])){
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
         <script>
-            if(getPersen('progress1') >= 50){
+            if(getPersen('progress1') >= <?php echo $data['tingkat_air'];?>){
                 document.getElementById("progress1").style.width="0%";
             }
             
@@ -456,5 +462,6 @@ if(!isset($_SESSION['username'])){
                 return width;
             }
         </script>
+        
     </body>
 </html>
