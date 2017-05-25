@@ -1,1 +1,44 @@
-/* Write your custom CSS here */
+
+#myCanvas{
+    z-index: 1;
+    position:inherit;
+    left:0px;
+    top:0px;
+}
+
+
+
+#sektor1{
+    z-index: 2;
+    position:absolute;
+    left:0px;
+    top:0px; 
+} 
+
+
+/*
+#sektor2{
+    z-index: 3;
+    position:absolute;
+    left:0px;
+    top:0px;   
+}
+
+#sektor3{
+    z-index: 4;
+    position:absolute;
+    left:0px;
+    top:0px;   
+}
+#sektor4{
+    z-index: 5;
+    position:absolute;
+    left:0px;
+    top:0px;   
+}
+#sektor5{
+    z-index: 6;
+    position:absolute;
+    left:0px;
+    top:0px;   
+}*/
