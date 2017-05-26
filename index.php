@@ -315,11 +315,11 @@ if(!isset($_SESSION['username'])){
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="mailbox.html">Area 1</a></li>
-                                <li><a href="search.html">Area 2</a></li>
-                                <li><a href="todo.html">Area 3</a></li>
-								<li><a href="mailbox.html">Area 4</a></li>
-								<li><a href="mailbox.html">Area 5</a></li>
+                                <li><a href="area1.html">Area 1</a></li>
+                                <li><a href="area2.html">Area 2</a></li>
+                                <li><a href="area3.html">Area 3</a></li>
+                                <li><a href="area4.html">Area 4</a></li>
+                                <li><a href="area5.html">Area 5</a></li>
                             </ul>
                         </div>
                     </li>
