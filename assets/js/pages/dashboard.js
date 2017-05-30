@@ -2,8 +2,6 @@ $( document ).ready(function() {
     
     setTimeout(function(){ Materialize.toast('Selamat Datang Admin', 4000) }, 4000);
     
-    
-    
     // CounterUp Plugin
     $('.counter').each(function () {
         $(this).prop('Counter',0).animate({

@@ -351,9 +351,14 @@ if(!isset($_SESSION['username'])){
                                         </ul>
                                     </div>
                                     <span class="card-title">Peta Area Pasar Rukoh</span>
+                                    <div class="container">
+                                        <canvas id="canvas" width="903" height="750"></canvas>
+                                    </div>
+<!--
                                             <div id="flotchart1">
 												<img src="peta.png">
 											</div>
+-->
                                 </div>
                             </div>
                         </div>
@@ -391,10 +396,10 @@ if(!isset($_SESSION['username'])){
 										<div id="area">
 											<p>Area 5</p>
 												<div class="progress">
-													<div class="determinate red" style="width: 100%" id="progress5"></div>
+													<div class="determinate" style="width: 100%" id="progress5"></div>
 												</div>
 										</div>
-										<span onclick="Flush()" class="btn_flush">Flush</span>
+										<span onclick="Flush('all')" class="btn_flush">Flush</span>
 										
 										<span class="btn_flush">Auto Flush
 											<div class="switch">
@@ -411,17 +416,6 @@ if(!isset($_SESSION['username'])){
                     </div>
                     
                 </div>
-                <script type="text/javascript">
-					function Flush(){
-						document.getElementById("progress1").style.width="0%";
-						document.getElementById("progress2").style.width="0%";
-						document.getElementById("progress3").style.width="0%";
-						document.getElementById("progress4").style.width="0%";
-						document.getElementById("progress5").style.width="0%";
-			
-					}
-        
-				</script>
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
@@ -440,8 +434,13 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
         <script src="assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/fabricjs/dist/fabric.min.js"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+<!--
         <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
         <script src="assets/plugins/chart.js/chart.min.js"></script>
+-->
+<!--
         <script src="assets/plugins/flot/jquery.flot.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.symbol.min.js"></script>
@@ -449,11 +448,34 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
         <script src="assets/plugins/curvedlines/curvedLines.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+-->
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
         <script>
+            init();
+            var timer = new Array();
+            for(var i = 1; i<=5; i++){
+                if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                    $('#progress'+i).addClass('red')
+                    timer['progress'+i] = showAlert(i, 'red');
+                }
+            }
+            
             if(getPersen('progress1') >= <?php echo $data['tingkat_air'];?>){
                 document.getElementById("progress1").style.width="0%";
+            }
+            
+            function Flush(tipe){
+                if(tipe == 'all'){
+                    for(var i = 1; i<=5; i++){
+                        document.getElementById('progress'+i).style.width="0%";
+                        removeAlert(timer['progress'+i],i);
+                    }
+                }
+                else{
+                    document.getElementById(tipe).style.width="0%";
+                }
+
             }
             
             
