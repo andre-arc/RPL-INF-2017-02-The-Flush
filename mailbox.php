@@ -547,21 +547,20 @@
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="mailbox.html">Area 1</a></li>
-                                <li><a href="search.html">Area 2</a></li>
-                                <li><a href="todo.html">Area 3</a></li>
-								<li><a href="mailbox.html">Area 4</a></li>
-								<li><a href="mailbox.html">Area 5</a></li>
+                                <li><a href="area1.php">Area 1</a></li>
+                                <li><a href="area2.php">Area 2</a></li>
+                                <li><a href="area3.php">Area 3</a></li>
+                                <li><a href="area4.php">Area 4</a></li>
+                                <li><a href="area5.php">Area 5</a></li>
                             </ul>
                         </div>
                     </li>
 					<li class="no-padding">
-                        <a href='mailbox.html' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
+                        <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
                     </li>
 					<li class="no-padding">
-                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
-                    </li>
-					
+                        <a href="setting.php" class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
+                    </li>					
                     
                 </ul>
                 <div class="footer">

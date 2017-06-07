@@ -1,3 +1,12 @@
+<?php
+include("config/config.php");
+include("config/db_connect.php");
+
+session_start();
+if(!isset($_SESSION['username'])){
+    echo '<script>window.location.replace("'.BASE_URL.'login.php");</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,6 +25,8 @@
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
         <link href="assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet">
         <link href="assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet">
+		        <link href="assets/plugins/nvd3/nv.d3.min.css" rel="stylesheet">  
+				<link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet"> 
 
         	
         <!-- Theme Styles -->
@@ -299,21 +310,24 @@
                         </ul>
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.php"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
                     <li class="no-padding">
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="area1.html">Area 1</a></li>
-                                <li><a href="area2.html">Area 2</a></li>
-                                <li><a href="area3.html">Area 3</a></li>
-								<li><a href="area4.html">Area 4</a></li>
-								<li><a href="area5.html">Area 5</a></li>
+                                <li><a href="area1.php">Area 1</a></li>
+                                <li><a href="area2.php">Area 2</a></li>
+                                <li><a href="area3.php">Area 3</a></li>
+								<li><a href="area4.php">Area 4</a></li>
+								<li><a href="area5.php">Area 5</a></li>
                             </ul>
                         </div>
                     </li>
+                    <li class="no-padding">
+                        <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
+                    </li>
 					<li class="no-padding">
-                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
+                        <a href="setting.php" class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
                     </li>
                     
                 </ul>
@@ -336,10 +350,11 @@
                                             <li><a href="javascript:void(0)" class="card-refresh"><i class="material-icons">refresh</i></a></li>
                                         </ul>
                                     </div>
-										<span class="card-title"><center>AREA 4</center></span>
-                                            <div id="flotchart1">
-												<img src="image/tabung1.png">
-											</div>
+										<span class="card-title"><center>AREA 1</center></span>
+                                           <div class="card-content">
+                                <span class="card-title">Status Area</span>
+                                <div id="flot3"></div>
+                            </div>
 										<span class="btn_flush">FLUSH</span>
                                 </div>
                             </div>
@@ -373,12 +388,54 @@
         <script src="assets/plugins/flot/jquery.flot.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.symbol.min.js"></script>
+        <script src="assets/plugins/flot/jquery.flot.pie.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.resize.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
         <script src="assets/plugins/curvedlines/curvedLines.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
+		
         
+        <script>
+            var flot3 = function () {
+        var data = [{
+            label: "Tergenang",
+            data: 42,
+            color: "#3366CC",
+        }, {
+            label: "Tidak Tergenang",
+            data: 23,
+            color: "#ff9800",
+        }, ];
+        var options = {
+            series: {
+                pie: {
+                    show: true
+                }
+            },
+            legend: {
+                labelFormatter: function(label, series){
+                    return '<span class="pie-chart-legend">'+label+'</span>';
+                }
+            },
+            grid: {
+                hoverable: true
+            },
+            tooltip: true,
+            tooltipOpts: {
+                content: "%p.0%, %s",
+                shifts: {
+                    x: 20,
+                    y: 0
+                },
+                defaultTheme: false
+            }
+        };
+        $.plot($("#flot3"), data, options);
+    };
+
+    flot3();
+        </script>
     </body>
 </html>
