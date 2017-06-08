@@ -440,7 +440,7 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
         <script src="assets/plugins/chart.js/chart.min.js"></script>
 -->
-<!--
+
         <script src="assets/plugins/flot/jquery.flot.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.symbol.min.js"></script>
@@ -448,7 +448,7 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
         <script src="assets/plugins/curvedlines/curvedLines.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
--->
+
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
         <script>
