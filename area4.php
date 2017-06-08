@@ -6,6 +6,12 @@ session_start();
 if(!isset($_SESSION['username'])){
     echo '<script>window.location.replace("'.BASE_URL.'login.php");</script>';
 }
+$query = "select * from pengaturan";
+    $result = $mysqli->query($query);
+    if($result == true){
+        $data = $result->fetch_assoc();
+    } 
+    $mysqli->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -355,7 +361,7 @@ if(!isset($_SESSION['username'])){
                                 <span class="card-title">Status Area</span>
                                 <div id="flot3"></div>
                             </div>
-                                        <span class="btn_flush">FLUSH</span>
+                                        <span class="btn_flush" onclick="ajaxFlush('4')">FLUSH</span>
                                 </div>
                             </div>
                         </div>
@@ -398,14 +404,18 @@ if(!isset($_SESSION['username'])){
         
         
         <script>
+        <?php 
+        $tergenang = $data['area4'];
+        $tidak = 100-$data['area4'];
+        ?>
             var flot3 = function () {
         var data = [{
             label: "Tergenang",
-            data: 42,
+            data: <?php echo $tergenang;?>,
             color: "#3366CC",
         }, {
             label: "Tidak Tergenang",
-            data: 23,
+            data: <?php echo $tidak;?>,
             color: "#ff9800",
         }, ];
         var options = {
@@ -436,6 +446,21 @@ if(!isset($_SESSION['username'])){
     };
 
     flot3();
+
+    function ajaxFlush(tipe){
+                  //do ajax proses
+             $.ajax({
+               url : "flush.php", 
+               type: "post", //form method
+               data: {area : tipe},
+               success:function(result){
+                    location.reload();
+               },
+               error: function(xhr, Status, err) {
+                 alert("Terjadi error : "+Status);
+               }
+                 });
+         }
         </script>
     </body>
 </html>
