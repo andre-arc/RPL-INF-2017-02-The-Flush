@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2017 at 11:55 AM
+-- Generation Time: Jun 07, 2017 at 08:29 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -31,15 +31,20 @@ CREATE TABLE IF NOT EXISTS `pengaturan` (
   `periode` varchar(10) NOT NULL,
   `area_p` varchar(10) NOT NULL,
   `tingkat_air` varchar(10) NOT NULL,
-  `area_t` varchar(10) NOT NULL
+  `area_t` varchar(10) NOT NULL,
+  `area1` int(10) NOT NULL,
+  `area2` int(10) NOT NULL,
+  `area3` int(10) NOT NULL,
+  `area4` int(10) NOT NULL,
+  `area5` int(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengaturan`
 --
 
-INSERT INTO `pengaturan` (`id`, `periode`, `area_p`, `tingkat_air`, `area_t`) VALUES
-(1, '15', '2', '40', '3');
+INSERT INTO `pengaturan` (`id`, `periode`, `area_p`, `tingkat_air`, `area_t`, `area1`, `area2`, `area3`, `area4`, `area5`) VALUES
+(1, '15', '1', '40', '2', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 

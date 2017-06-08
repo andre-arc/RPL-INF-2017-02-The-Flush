@@ -6,6 +6,13 @@ session_start();
 if(!isset($_SESSION['username'])){
     echo '<script>window.location.replace("'.BASE_URL.'login.php");</script>';
 }
+
+     $query = "select * from pengaturan";
+    $result = $mysqli->query($query);
+    if($result == true){
+        $data = $result->fetch_assoc();
+    } 
+    $mysqli->close();
 ?>
 
 
@@ -372,34 +379,34 @@ if(!isset($_SESSION['username'])){
 										<div id="area">
 											<p>Area 1</p>
 												<div class="progress">
-													<div class="determinate" style="width: 30%" id="progress1"></div>
+													<div class="determinate" style="width: <?php echo $data['area1'];?>%" id="progress1"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 2</p>
 												<div class="progress">
-													<div class="determinate" style="width: 30%" id="progress2"></div>
+													<div class="determinate" style="width: <?php echo $data['area2'];?>%" id="progress2"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 3</p>
 												<div class="progress">
-													<div class="determinate" style="width: 50%" id="progress3"></div>
+													<div class="determinate" style="width: <?php echo $data['area3'];?>%" id="progress3"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 4</p>
 												<div class="progress">
-													<div class="determinate" style="width: 65%" id="progress4"></div>
+													<div class="determinate" style="width: <?php echo $data['area4'];?>%" id="progress4"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 5</p>
 												<div class="progress">
-													<div class="determinate" style="width: 100%" id="progress5"></div>
+													<div class="determinate" style="width: <?php echo $data['area5'];?>%" id="progress5"></div>
 												</div>
 										</div>
-										<span onclick="Flush('all')" class="btn_flush">Flush</span>
+										<span onclick="ajaxFlush('all')" class="btn_flush">Flush</span>
 										
 										<span class="btn_flush">Auto Flush
 											<div class="switch">
@@ -419,13 +426,6 @@ if(!isset($_SESSION['username'])){
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
-        <?php
-         $query = "select * from pengaturan";
-        $result = $mysqli->query($query);
-        if($result == true){
-            $data = $result->fetch_assoc();
-        }                        
-        ?>
         
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
@@ -461,8 +461,9 @@ if(!isset($_SESSION['username'])){
                 }
             }
             
-            if(getPersen('progress1') >= <?php echo $data['tingkat_air'];?>){
+            if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
                 document.getElementById("progress1").style.width="0%";
+                removeAlert(timer['progress1'],1);
             }
             
             function Flush(tipe){
@@ -473,16 +474,30 @@ if(!isset($_SESSION['username'])){
                     }
                 }
                 else{
-                    document.getElementById(tipe).style.width="0%";
+                    document.getElementById('progress'+tipe).style.width="0%";
                 }
 
             }
-            
-            
+                      
             function getPersen(id){
                 var width = parseInt( 100 * parseFloat($('#'+id).css('width')) / parseFloat($('#'+id).parent().css('width')));
                 return width;
             }
+            
+         function ajaxFlush(tipe){
+                  //do ajax proses
+             $.ajax({
+               url : "flush.php", 
+               type: "post", //form method
+               data: {area : tipe},
+               success:function(result){
+                     Flush(tipe);
+               },
+               error: function(xhr, Status, err) {
+                 alert("Terjadi error : "+Status);
+               }
+                 });
+         }
         </script>
         
     </body>
