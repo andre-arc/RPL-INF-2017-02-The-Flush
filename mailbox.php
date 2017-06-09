@@ -98,6 +98,9 @@
                             
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
+						
+                    </div>
+                </nav>
 
             </header>
             
