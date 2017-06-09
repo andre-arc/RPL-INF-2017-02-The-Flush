@@ -98,197 +98,9 @@
                             
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
-                        
-                        <ul id="dropdown1" class="dropdown-content notifications-dropdown">
-                            <li class="notificatoins-dropdown-container">
-                                <ul>
-                                    <li class="notification-drop-title">Today</li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle blue"><i class="material-icons">done</i></div>
-                                            <div class="notification-text"><p><b>Alan Grey</b> uploaded new theme</p><span>7 min ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle deep-purple"><i class="material-icons">cached</i></div>
-                                            <div class="notification-text"><p><b>Tom</b> updated status</p><span>14 min ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle red"><i class="material-icons">delete</i></div>
-                                            <div class="notification-text"><p><b>Amily Lee</b> deleted account</p><span>28 min ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle blue"><i class="material-icons">person_add</i></div>
-                                            <div class="notification-text"><p><b>Tom Simpson</b> registered</p><span>2 hrs ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle green"><i class="material-icons">file_upload</i></div>
-                                            <div class="notification-text"><p>Finished uploading files</p><span>4 hrs ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li class="notification-drop-title">Yestarday</li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle green"><i class="material-icons">security</i></div>
-                                            <div class="notification-text"><p>Security issues fixed</p><span>16 hrs ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle indigo"><i class="material-icons">file_download</i></div>
-                                            <div class="notification-text"><p>Finished downloading files</p><span>22 hrs ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                        <div class="notification">
-                                            <div class="notification-icon circle blue"><i class="material-icons">code</i></div>
-                                            <div class="notification-text"><p>Code changes were saved</p><span>1 day ago</span></div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-						
-                    </div>
-                </nav>
+
             </header>
-            <div class="search-results">
-                <div class="container search-container">
-                    <div class="row">
-                        <div class="col s12 search-head">
-                            <div class="row">
-                                <div class="col s12">
-                                    <div class="left">
-                                        <p class="search-results-title">Quick search results</p>
-                                        <p class="search-filter left">
-                                            <input type="checkbox" class="filled-in" id="filled-in-box" checked/>
-                                            <label for="filled-in-box">Google search</label>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="res-not-found">No results found</div>
-                        </div>
-                        <div class="col s12 m4 search-result-container">
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image-1.png" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            Search <span class="search-text search-result-highlight"></span><br><span class="secondary-search-text">Last active 2 days ago</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image-3.jpg" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            News about <span class="search-text search-result-highlight"></span><br><span class="secondary-search-text">23 Blogs</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image.png" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            Tom King (Works at <span class="search-text search-result-highlight"></span>)<br><span class="secondary-search-text">Avaible for freelance work</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m4 search-result-container">
-                            <div class="card card-transparent ">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <span class="z-depth-1 circle search-circle indigo lighten-1">F</span>
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            <span class="search-text search-result-highlight"></span> on Facebook<br><span class="secondary-search-text"><a href="#">View website</a></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <span class="z-depth-1 circle search-circle light-blue lighten-1">T</span>
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            <span class="search-text search-result-highlight"></span> on Twitter<br><span class="secondary-search-text"><a href="#">View website</a></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <span class="z-depth-1 circle search-circle red darken-1">G</span>
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            Google+ <span class="search-text search-result-highlight"></span><br><span class="secondary-search-text"><a href="#">View website</a></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m4 search-result-container">
-                            <div class="card card-transparent">
-                                <div class="card-content first">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sunt in culpa qui<span class="search-text search-result-highlight"></span> quis.</p>
-                                </div>
-                                <div class="card-action">
-                                    <span class="grey-text">Yesterday, 4:56 PM</span>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="card-content">
-                                    <p>Sunt in culpa qui <span class="search-text search-result-highlight"></span> officia deserunt mollit anim id est laborum. officia deserunt mollit anim id est laborum officia deserunt mollit anim</p>
-                                </div>
-                                <div class="card-action">
-                                    <span class="grey-text">27 January 2016</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <aside id="chat-sidebar" class="side-nav white">
                 <div class="side-nav-wrapper">
                     <div class="col s12">
@@ -519,8 +331,9 @@
                     <div class="sidebar-account-settings">
                         <ul>
                             
+                            <li class="divider"></li>
                             <li class="no-padding">
-                                <a href="<?= BASE_URL.'logout.php'?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Log Out</a>
+                                <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Log Out</a>
                             </li>
                         </ul>
                     </div>
@@ -530,11 +343,11 @@
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="area1.php">Area 1</a></li>
-                                <li><a href="area2.php">Area 2</a></li>
-                                <li><a href="area3.php">Area 3</a></li>
-                                <li><a href="area4.php">Area 4</a></li>
-                                <li><a href="area5.php">Area 5</a></li>
+                                <li><a href="mailbox.html">Area 1</a></li>
+                                <li><a href="search.html">Area 2</a></li>
+                                <li><a href="todo.html">Area 3</a></li>
+								<li><a href="mailbox.html">Area 4</a></li>
+								<li><a href="mailbox.html">Area 5</a></li>
                             </ul>
                         </div>
                     </li>
@@ -542,8 +355,9 @@
                         <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
                     </li>
 					<li class="no-padding">
-                        <a href="setting.php" class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
-                    </li>					
+                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
+                    </li>
+					
                     
                 </ul>
                 <div class="footer">
@@ -559,108 +373,34 @@
                         <div class="card mailbox-content">
                             <div class="card-content">
                                 <div class="row no-m-t no-m-b">
-                                    <div class="col s12 m5 l3">
-                                        <div class="mailbox-list">
-                                            <ul>
-                                                <li>
-                                                    <a href="">
-                                                        <div class="mail-checkbox">
-                                                            <input type="checkbox" class="filled-in" id="mail-checkbox1"/>
-                                                            <label for="mail-checkbox1"></label>
-                                                        </div>
-                                                        <h5 class="mail-author">Jonathan Smith</h5>
-                                                        <h4 class="mail-title">I am on my way</h4>
-                                                        <p class="hide-on-small-and-down mail-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit...</p>
-                                                        <div class="position-top-right p f-12 mail-date">12:46 am</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <div class="mail-checkbox">
-                                                            <input type="checkbox" class="filled-in" id="mail-checkbox2"/>
-                                                            <label for="mail-checkbox2"></label>
-                                                        </div>
-                                                        <h5 class="mail-author">Jonathan Smith</h5>
-                                                        <h4 class="mail-title">I am on my way</h4>
-                                                        <p class="hide-on-small-and-down mail-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit...</p>
-                                                        <div class="position-top-right p f-12 mail-date">12:46 am</div>
-                                                        <div class="position-bottom-right p mail-attachment"><i class="material-icons">attachment</i></div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="mail-active">
-                                                        <div class="mail-checkbox">
-                                                            <input type="checkbox" class="filled-in" id="mail-checkbox3"/>
-                                                            <label for="mail-checkbox3"></label>
-                                                        </div>
-                                                        <h5 class="mail-author">Jonathan Smith</h5>
-                                                        <h4 class="mail-title">I am on my way</h4>
-                                                        <p class="hide-on-small-and-down mail-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit...</p>
-                                                        <div class="position-top-right p f-12 mail-date">12:46 am</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <div class="mail-checkbox">
-                                                            <input type="checkbox" class="filled-in" id="mail-checkbox4"/>
-                                                            <label for="mail-checkbox4"></label>
-                                                        </div>
-                                                        <h5 class="mail-author">Jonathan Smith</h5>
-                                                        <h4 class="mail-title">I am on my way</h4>
-                                                        <p class="hide-on-small-and-down mail-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit...</p>
-                                                        <div class="position-top-right p f-12 mail-date">12:46 am</div>
-                                                    </a>
-                                                </li>
-               
-                                            </ul>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="col s12 m7 l9">
-                                        <div class="mailbox-options">
-                                            <ul>
-                                                <li><a href="">Reply</a></li>
-                                                <li><a href="">Forward</a></li>
-                                                <li><a href="">Spam</a></li>
-                                                <li><a href="">Mark as read</a></li>
-                                            </ul>
-                                        </div>
+                                        <table>
                                         <div class="mailbox-view">
-                                            <div class="mailbox-view-header">
-                                                <div class="left">
-                                                    <div class="left">
-                                                        <img src="assets/images/profile-image-1.png" alt="" class="circle mailbox-profile-image z-depth-1">
-                                                    </div>
-                                                    <div class="left">
-                                                        <span class="mailbox-title">Pengunjung Pasar Rukoh</span>
-                                                        <span class="mailbox-author">Onah</span>
-                                                    </div>
-                                                </div>
-                                                <div class="right mailbox-buttons">
-                                                    <a class="waves-effect waves-grey btn-flat m-t-xs">Print</a>
-                                                    <a class="waves-effect waves-red btn-flat m-t-xs">Delete</a>
-                                                </div>
-                                            </div>
-                                            <div class="divider mailbox-divider"></div>
-                                            <div class="mailbox-text">
-                                                <div class="mailbox-details">
-                                                    <a href="javascript:void(0);" class="details-toggle">Show Details</a>
-                                                    <div class="row details-list">
-                                                        <div class="col s4 first-col">
-                                                            <span>From</span>
-                                                            <span>To</span>
-                                                            <span>Date</span>
-                                                        </div>
-                                                        <div class="col s8 second-col">
-                                                            <span>integer.mattis@gmail.com</span>
-                                                            <span>jonathan.mattis@gmail.com</span>
-                                                            <span>Today at 14:31</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p>Assalamu'alaikum wr.wb.<br><br>Saya melihat bahwa area 1 sekiranya perlu dilakukan pembersihan. Status genangan airnya sudah mencapai 50%.<br><br>Wassalamu'alaikum wr.wb. </p>
-                                                <div class="divider mailbox-divider"></div>
-                                                
-                                            </div>
+										<?php
+											echo '<h4>Kotak Masuk<h4>
+												 <tr>
+													<th>Dari</th>
+													<th>Email Pengirim</th>
+													<th>Pesan</th>
+												  </tr>';
+												$tampil = "SELECT * FROM pesan";
+											
+												$sql = $mysqli->query($tampil);
+												
+												while($data = mysqli_fetch_array($sql))
+												{
+													$i=$data['id'];
+													echo "
+													<tr>
+													<td>".$data['dari']."</td>
+													<td>".$data['email']."</td>
+													<td>".$data['pesan']."</td>
+													</tr>";
+												}
+ 
+										?>
+										</table>
                                         </div>
                                     </div>
                                 </div>
@@ -668,50 +408,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                    <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#compose">
-                        <i class="material-icons">mode_edit</i>
-                    </a>
-                </div>
+                
             </main>
-            <div id="compose" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>New Message</h4>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="to" type="email" class="validate">
-                                    <label for="to">To</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <input id="subject" type="text" class="validate">
-                                    <label for="subject">Subject</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <textarea id="editor" autofocus></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn right">Send</a>
-                </div>
-            </div>
-           
-        
+            
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
         <script src="assets/plugins/materialize/js/materialize.min.js"></script>
         <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+		<script src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/fabricjs/dist/fabric.min.js"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
         <script src="assets/plugins/simditor/scripts/module.js"></script>
         <script src="assets/plugins/simditor/scripts/hotkeys.js"></script>
         <script src="assets/plugins/simditor/scripts/uploader.js"></script>
         <script src="assets/plugins/simditor/scripts/simditor.js"></script>
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/mailbox.js"></script>
+		
         
     </body>
 </html>

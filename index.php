@@ -4,7 +4,7 @@ include("config/db_connect.php");
 
 session_start();
 if(!isset($_SESSION['username'])){
-    echo '<script>window.location.replace("'.BASE_URL.'login.php");</script>';
+    echo '<script>window.location.replace("'.BASE_URL.'pengunjung.php");</script>';
 }
 
      $query = "select * from pengaturan";
