@@ -458,11 +458,6 @@ if(!isset($_SESSION['username'])){
                 }
             }
             
-            if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
-                document.getElementById("progress1").style.width="0%";
-                removeAlert(timer['progress1'],1);
-            }
-            
             function Flush(tipe){
                 if(tipe == 'all'){
                     for(var i = 1; i<=5; i++){

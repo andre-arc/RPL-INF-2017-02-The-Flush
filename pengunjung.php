@@ -2,9 +2,7 @@
 include("config/config.php");
 include("config/db_connect.php");
 
-
-
-     $query = "select * from pengaturan";
+      $query = "select * from pengaturan";
     $result = $mysqli->query($query);
     if($result == true){
         $data = $result->fetch_assoc();
@@ -219,7 +217,7 @@ include("config/db_connect.php");
 -->
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
-        <script>
+         <script>
             init();
             var timer = new Array();
             for(var i = 1; i<=5; i++){
@@ -227,11 +225,6 @@ include("config/db_connect.php");
                     $('#progress'+i).addClass('red')
                     timer['progress'+i] = showAlert(i, 'red');
                 }
-            }
-            
-            if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
-                document.getElementById("progress1").style.width="0%";
-                removeAlert(timer['progress1'],1);
             }
             
             function Flush(tipe){
@@ -243,12 +236,13 @@ include("config/db_connect.php");
                 }
                 else{
                     document.getElementById('progress'+tipe).style.width="0%";
+                    removeAlert(timer['progress'+tipe],tipe);
                 }
 
             }
                       
             function getPersen(id){
-                var width = parseInt( 100 * parseFloat($('#'+id).css('width')) / parseFloat($('#'+id).parent().css('width')));
+                var width = Math.ceil( 100 * parseFloat($('#'+id).css('width')) / parseFloat($('#'+id).parent().css('width')));
                 return width;
             }
             
@@ -266,6 +260,18 @@ include("config/db_connect.php");
                }
                  });
          }
+            
+             <?php
+            $interval = $data['periode'] * 60 * 1000;
+            ?>
+             setInterval(function(){
+                for(var i = 1; i<=5; i++){ 
+                    if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                        ajaxFlush(i);
+                    }
+                 }
+            }, <?php echo $interval;?>);
+            
         </script>
         
     </body>
