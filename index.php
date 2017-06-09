@@ -6,6 +6,13 @@ session_start();
 if(!isset($_SESSION['username'])){
     echo '<script>window.location.replace("'.BASE_URL.'login.php");</script>';
 }
+
+     $query = "select * from pengaturan";
+    $result = $mysqli->query($query);
+    if($result == true){
+        $data = $result->fetch_assoc();
+    } 
+    $mysqli->close();
 ?>
 
 
@@ -60,10 +67,7 @@ if(!isset($_SESSION['username'])){
                             
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
-                        <ul class="right col s9 m3 nav-right-menu">
-                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                            <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
-                        </ul>
+                        
                         
                         <ul id="dropdown1" class="dropdown-content notifications-dropdown">
                             <li class="notificatoins-dropdown-container">
@@ -310,21 +314,24 @@ if(!isset($_SESSION['username'])){
                         </ul>
                     </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.php"><i class="material-icons">settings_input_svideo</i>Peta Area Pasar</a></li>
                     <li class="no-padding">
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Area Pasar<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="mailbox.html">Area 1</a></li>
-                                <li><a href="search.html">Area 2</a></li>
-                                <li><a href="todo.html">Area 3</a></li>
-								<li><a href="mailbox.html">Area 4</a></li>
-								<li><a href="mailbox.html">Area 5</a></li>
+                                <li><a href="area1.php">Area 1</a></li>
+                                <li><a href="area2.php">Area 2</a></li>
+                                <li><a href="area3.php">Area 3</a></li>
+                                <li><a href="area4.php">Area 4</a></li>
+                                <li><a href="area5.php">Area 5</a></li>
                             </ul>
                         </div>
                     </li>
 					<li class="no-padding">
-                        <a class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
+                        <a href='mailbox.php' class="waves-effect waves-grey"><i class="material-icons">message</i>Mailbox</a>
+                    </li>
+					<li class="no-padding">
+                        <a href="setting.php" class="waves-effect waves-grey"><i class="material-icons">settings</i>Pengaturan Auto Flush</a>
                     </li>
                     
                 </ul>
@@ -348,9 +355,14 @@ if(!isset($_SESSION['username'])){
                                         </ul>
                                     </div>
                                     <span class="card-title">Peta Area Pasar Rukoh</span>
+                                    <div class="container">
+                                        <canvas id="canvas" width="903" height="750"></canvas>
+                                    </div>
+<!--
                                             <div id="flotchart1">
 												<img src="peta.png">
 											</div>
+-->
                                 </div>
                             </div>
                         </div>
@@ -364,34 +376,35 @@ if(!isset($_SESSION['username'])){
 										<div id="area">
 											<p>Area 1</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: <?php echo $data['area1'];?>%" id="progress1"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 2</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: <?php echo $data['area2'];?>%" id="progress2"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 3</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: <?php echo $data['area3'];?>%" id="progress3"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 4</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: <?php echo $data['area4'];?>%" id="progress4"></div>
 												</div>
 										</div>
 										<div id="area">
 											<p>Area 5</p>
 												<div class="progress">
-													<div class="determinate" style="width: 70%"></div>
+													<div class="determinate" style="width: <?php echo $data['area5'];?>%" id="progress5"></div>
 												</div>
 										</div>
-										<span class="btn_flush">Flush</span>
+										<span onclick="ajaxFlush('all')" class="btn_flush">Flush</span>
+										
 										<span class="btn_flush">Auto Flush
 											<div class="switch">
 												<label>
@@ -407,11 +420,9 @@ if(!isset($_SESSION['username'])){
                     </div>
                     
                 </div>
-                
             </main>
         </div>
         <div class="left-sidebar-hover"></div>
-        
         
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
@@ -420,8 +431,13 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
         <script src="assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/fabricjs/dist/fabric.min.js"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+<!--
         <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
         <script src="assets/plugins/chart.js/chart.min.js"></script>
+-->
+
         <script src="assets/plugins/flot/jquery.flot.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
         <script src="assets/plugins/flot/jquery.flot.symbol.min.js"></script>
@@ -429,8 +445,70 @@ if(!isset($_SESSION['username'])){
         <script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
         <script src="assets/plugins/curvedlines/curvedLines.js"></script>
         <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+
         <script src="assets/js/alpha.min.js"></script>
         <script src="assets/js/pages/dashboard.js"></script>
+        <script>
+            init();
+            var timer = new Array();
+            for(var i = 1; i<=5; i++){
+                if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                    $('#progress'+i).addClass('red')
+                    timer['progress'+i] = showAlert(i, 'red');
+                }
+            }
+            
+            if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                document.getElementById("progress1").style.width="0%";
+                removeAlert(timer['progress1'],1);
+            }
+            
+            function Flush(tipe){
+                if(tipe == 'all'){
+                    for(var i = 1; i<=5; i++){
+                        document.getElementById('progress'+i).style.width="0%";
+                        removeAlert(timer['progress'+i],i);
+                    }
+                }
+                else{
+                    document.getElementById('progress'+tipe).style.width="0%";
+                    removeAlert(timer['progress'+tipe],tipe);
+                }
+
+            }
+                      
+            function getPersen(id){
+                var width = parseInt( 100 * parseFloat($('#'+id).css('width')) / parseFloat($('#'+id).parent().css('width')));
+                return width;
+            }
+            
+         function ajaxFlush(tipe){
+                  //do ajax proses
+             $.ajax({
+               url : "flush.php", 
+               type: "post", //form method
+               data: {area : tipe},
+               success:function(result){
+                     Flush(tipe);
+               },
+               error: function(xhr, Status, err) {
+                 alert("Terjadi error : "+Status);
+               }
+                 });
+         }
+            
+             <?php
+            $interval = $data['periode'] * 60 * 1000;
+            ?>
+             setInterval(function(){
+                for(var i = 1; i<=5; i++){ 
+                    if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                        ajaxFlush(i);
+                    }
+                 }
+            }, <?php echo $interval;?>);
+            
+        </script>
         
     </body>
 </html>
