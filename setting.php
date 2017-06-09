@@ -63,10 +63,7 @@
                             
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
-                        <ul class="right col s9 m3 nav-right-menu">
-                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                            <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
-                        </ul>
+                        
                         
                         <ul id="dropdown1" class="dropdown-content notifications-dropdown">
                             <li class="notificatoins-dropdown-container">
@@ -368,29 +365,8 @@
 										<option value="120" />2 Jam</option>
 										<option value="180" />3 Jam</option>
 									  </select>
-								  <p>Area</p>
-									  <select onchange="setAreaPertime(this.value)" name="area_p">
-									   <?php
-                                          if($data['area_p'] != 'semua'){
-                                              $area_p = ucwords("area ".$data['area_p']);
-                                          }
-                                          else{
-                                              $area_p = ucwords($data['area_p']." area");
-                                          }
-                                          echo "<option value='$data[area_p]' />$area_p</option>";
-                                          ?>
-										<option value="semua" />Semua Area</option>
-										<option value="1" />Area 1</option>
-										<option value="2" />Area 2</option>
-										<option value="3" />Area 3</option>
-										<option value="4" />Area 4</option>
-										<option value="5" />Area 5</option>
-									  </select>
-									</div>
-									
-									<h4>Notifikasi</h4>
-									<div class="water_level">
-									<p>Tingkat Air</p>
+									  
+									  <p>Tingkat Air</p>
 									  <select onchange="setWaterLevel(this.value)" name="tingkat_air">
 									   <?php echo "<option value='$data[tingkat_air]' />$data[tingkat_air] %</option>"?>
 										<option value="20" />20 %</option>
@@ -401,24 +377,7 @@
 										<option value="100" />100 %</option>
 									  </select>
 									  
-									<p>Area</p>
-									  <select onchange="setTimePerlevel(this.value)" name="area_t">
-									   <?php
-                                          if($data['area_t'] != 'semua'){
-                                              $area_t = ucwords("area ".$data['area_t']);
-                                          }
-                                          else{
-                                              $area_t = ucwords($data['area_t']." area");
-                                          }
-                                          echo "<option value='$data[area_t]' />$area_t</option>";
-                                          ?>
-										<option value="semua" />Semua Area</option>
-										<option value="1" />Area 1</option>
-										<option value="2" />Area 2</option>
-										<option value="3" />Area 3</option>
-										<option value="4" />Area 4</option>
-										<option value="5" />Area 5</option>
-									  </select>
+								
 									</div>
 									
 									<div class="submit"><input type="submit" name="submit" value="Submit" onClick="" /></div>
@@ -430,11 +389,9 @@
 					<?php
                     if(isset($_POST['submit'])){
                         $tingkat_air = $_POST['tingkat_air'];
-                        $area_p = $_POST['area_p'];
                         $periode = $_POST['periode'];
-                        $area_t = $_POST['area_t'];
                         
-                        $query = "update pengaturan set periode='$periode', tingkat_air='$tingkat_air', area_p='$area_p',area_t='$area_t'";
+                        $query = "update pengaturan set periode='$periode', tingkat_air='$tingkat_air'";
                         $result = $mysqli->query($query);
                         if($result === true){
                             echo "<script>alert('pengaturan berhasil di update');</script>";
@@ -443,17 +400,7 @@
 
                     ?>
                     </div>
-                <script type="text/javascript">
-					function Flush(){
-						document.getElementById("progress1").style.width="0%";
-						document.getElementById("progress2").style.width="0%";
-						document.getElementById("progress3").style.width="0%";
-						document.getElementById("progress4").style.width="0%";
-						document.getElementById("progress5").style.width="0%";
-			
-					}
-        
-				</script>
+                    
             </main>
         </div>
         <div class="left-sidebar-hover"></div>

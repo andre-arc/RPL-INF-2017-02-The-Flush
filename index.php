@@ -67,10 +67,7 @@ if(!isset($_SESSION['username'])){
                             
                             <a href="javascript: void(0)" class="close-search"><i class="material-icons">close</i></a>
                         </form>
-                        <ul class="right col s9 m3 nav-right-menu">
-                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                            <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
-                        </ul>
+                        
                         
                         <ul id="dropdown1" class="dropdown-content notifications-dropdown">
                             <li class="notificatoins-dropdown-container">
@@ -475,6 +472,7 @@ if(!isset($_SESSION['username'])){
                 }
                 else{
                     document.getElementById('progress'+tipe).style.width="0%";
+                    removeAlert(timer['progress'+tipe],tipe);
                 }
 
             }
@@ -498,6 +496,18 @@ if(!isset($_SESSION['username'])){
                }
                  });
          }
+            
+             <?php
+            $interval = $data['periode'] * 60 * 1000;
+            ?>
+             setInterval(function(){
+                for(var i = 1; i<=5; i++){ 
+                    if(getPersen('progress'+i) >= <?php echo $data['tingkat_air'];?>){
+                        ajaxFlush(i);
+                    }
+                 }
+            }, <?php echo $interval;?>);
+            
         </script>
         
     </body>
