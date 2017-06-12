@@ -164,11 +164,11 @@ include("config/db_connect.php");
                         <form method="POST" action="aksi.php" class="col s12">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="to" type="text" class="validate" name="dari">
+                                    <input id="to" type="text" class="validate" name="dari" required>
                                     <label for="to">Dari</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <input id="subject" type="email" class="validate" name="email">
+                                    <input id="subject" type="email" class="validate" name="email" required>
                                     <label for="subject">E-mail</label>
                                 </div>
                                 <div class="input-field col s12">

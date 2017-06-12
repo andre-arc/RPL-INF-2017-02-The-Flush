@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2017 at 08:29 PM
+-- Generation Time: Jun 12, 2017 at 06:36 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -44,7 +44,27 @@ CREATE TABLE IF NOT EXISTS `pengaturan` (
 --
 
 INSERT INTO `pengaturan` (`id`, `periode`, `area_p`, `tingkat_air`, `area_t`, `area1`, `area2`, `area3`, `area4`, `area5`) VALUES
-(1, '15', '1', '40', '2', 0, 0, 0, 0, 0);
+(1, '15', '1', '20', '2', 0, 0, 30, 50, 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan`
+--
+
+CREATE TABLE IF NOT EXISTS `pesan` (
+  `id` int(2) NOT NULL,
+  `dari` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `pesan` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`id`, `dari`, `email`, `pesan`) VALUES
+(4, 'firman', 'firman@mhs.unsyiah.a', '<p>genangan air di area 1<br></p>');
 
 -- --------------------------------------------------------
 
@@ -77,6 +97,12 @@ ALTER TABLE `pengaturan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pesan`
+--
+ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -91,6 +117,11 @@ ALTER TABLE `user`
 --
 ALTER TABLE `pengaturan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `pesan`
+--
+ALTER TABLE `pesan`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user`
 --

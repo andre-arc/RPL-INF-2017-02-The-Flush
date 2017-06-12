@@ -405,14 +405,6 @@ if(!isset($_SESSION['username'])){
 										</div>
 										<span onclick="ajaxFlush('all')" class="btn_flush">Flush</span>
 										
-										<span class="btn_flush">Auto Flush
-											<div class="switch">
-												<label>
-													<input type="checkbox" checked="">
-													<span class="lever"></span>
-												</label>
-											</div>
-										</span>
 									</div>
                                 </div>
                             </div>
